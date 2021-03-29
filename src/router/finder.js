@@ -69,6 +69,7 @@ function RouterFinder({ routes, currentUrl, routerOptions, convert }) {
           );
           currentRoute.path = currentRoute.childRoute.path;
           currentRoute.language = currentRoute.childRoute.language;
+          currentRoute.component = currentRoute.childRoute.component;
         } else if (nestedRoutesAndNoPath(route, routerPath.pathNames)) {
           const indexRoute = searchActiveRoutes(
             route.nestedRoutes,
