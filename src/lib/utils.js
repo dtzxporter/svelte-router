@@ -121,7 +121,7 @@ const pathWithQueryParams = (currentRoute) => {
   let queryParams = [];
   if (currentRoute.queryParams) {
     for (let [key, value] of Object.entries(currentRoute.queryParams)) {
-      queryParams.push(`${key}=${value}`);
+      queryParams.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
     }
   }
 
