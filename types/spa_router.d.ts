@@ -27,6 +27,13 @@ export function localisedRoute(
   redirectTo: string;
 };
 /**
+ * Returns the currently active route or an error route if none is available.
+ *
+ * @export
+ * @return {*}  {(Route)}
+ */
+export function currentRoute(): Route;
+/**
  * Updates the current active route and updates the browser pathname
  * @param pathName String
  * @param language String

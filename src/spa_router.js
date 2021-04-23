@@ -83,6 +83,14 @@ const localisedRoute = (pathName, language) => {
 };
 
 /**
+ * Finds the currently active route
+ */
+const currentRoute = () => {
+  // I believe this is the correct way to do it for now, it should contain what we want...
+  return SpaRouter(userDefinedRoutes, window.location.href, routerOptions).findActiveRoute();
+};
+
+/**
  * Updates the current active route and updates the browser pathname
  * @param pathName String
  * @param language String
@@ -139,4 +147,4 @@ if (typeof window !== 'undefined') {
   };
 }
 
-export { SpaRouter, localisedRoute, navigateTo, routeIsActive };
+export { SpaRouter, localisedRoute, navigateTo, currentRoute, routeIsActive };
