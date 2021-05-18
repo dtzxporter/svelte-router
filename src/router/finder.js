@@ -67,9 +67,14 @@ function RouterFinder({ routes, currentUrl, routerOptions, convert }) {
             routerPath.routeLanguage(),
             convert
           );
+
+          // Switch context to the child route by copying info over
           currentRoute.path = currentRoute.childRoute.path;
           currentRoute.language = currentRoute.childRoute.language;
           currentRoute.component = currentRoute.childRoute.component;
+          currentRoute.namedParams = currentRoute.childRoute.namedParams;
+          currentRoute.queryParams = currentRoute.childRoute.queryParams;
+          
         } else if (nestedRoutesAndNoPath(route, routerPath.pathNames)) {
           const indexRoute = searchActiveRoutes(
             route.nestedRoutes,
